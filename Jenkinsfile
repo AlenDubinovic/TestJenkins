@@ -57,7 +57,7 @@ spec:
     }
     stage('Deploy Canary') {
       // Canary branch
-      when { branch 'canary' }
+      when { tag "canary" }
       steps {
         container('kubectl') {
           // Change deployed image in canary to the one we just built
